@@ -4,20 +4,35 @@ Download The Things Network device repository pre-build templates, you only need
 
 ## Documentation
 
-- Run create-project into deviceFiles folder or a folder you create to download templates.
-- Download templates and fill the necessary information so you can upload your devices.
+- Create a folder and install this npm .
+- Inside the folder you have created Run create-project, it will create a folder and download The Things Network Device Repository templates inside of it.
+
+```bash
+folder
+├── src
+│   ├── index.yaml              # vendor index
+│   ├── device.yaml             # device definition
+│   ├── profile.yaml            # generic end device profile
+│   ├── codec-x                 # payload codec definition
+```
+- Files need to be fill following instructions:
+
+https://user-images.githubusercontent.com/81958808/128865600-f3d5067c-f48a-4f68-8ad0-988d29a0d9b5.mov
+
 - If you download codec file it will be neccesary to add the decoder .js file.
 - Device Repository information can be review in this link https://github.com/TheThingsNetwork/lorawan-devices
 
-## Examples
+## Example
 
-Inside deviceFiles or a folder that you create run:
+Create a new folder named dev1.
+Inside this folder run:
 
 ```bash
 create-project
 ```
+
 Depending on your selection template files will be downloaded in your folder
 
-![Screen Shot 2021-08-09 at 13 00 18](https://user-images.githubusercontent.com/81958808/128752044-4f65f622-b82f-4af4-926a-2bd385afc6f6.png)
+https://user-images.githubusercontent.com/81958808/128866623-69936451-bb52-467b-90b2-7a9bd9f7608d.mov
 
 Now you only have to fill all the parameters of each files.
