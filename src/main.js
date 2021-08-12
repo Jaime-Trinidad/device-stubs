@@ -7,7 +7,7 @@ import { promisify } from 'util';
 const execa = require('execa');
 import Listr from 'listr';
 import { projectInstall } from 'pkg-install';
-
+const {generateTemplateFiles} = require('generate-template-files');
 
 const access = promisify(fs.access);
 const copy = promisify(ncp); //copy template in directory
@@ -29,7 +29,7 @@ export async function createProject(options){
     const templateDir = path.resolve(
         new URL(currentFileUrl).pathname,
         '../../templates',
-        options.template.toLowerCase()
+        options.template
     );
     options.templateDirectory = templateDir;
 
@@ -42,7 +42,7 @@ export async function createProject(options){
 
     const tasks = new Listr([
         {
-            title: 'Copy project files',
+            title: 'Downloading template selected',
             task: () => copyTemplateFiles(options), 
         },
       
@@ -50,6 +50,6 @@ export async function createProject(options){
 
     await tasks.run();
 
-    console.log('%s Device Repository files downloaded ', chalk.greenBright.bold('DONE'));
+    console.log('%s Template downloaded, fill the infomation ', chalk.greenBright.bold('DONE'));
     return true;
 }
