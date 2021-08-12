@@ -4,6 +4,7 @@ import { template } from 'lodash';
 const arg = require('arg');
 const inquirer = require('inquirer');
 import { createProject } from './main';
+import { createTemplate } from './generate';
 
 function parseArgumentsIntoOptions(rawArgs){
     const args = arg(
@@ -45,7 +46,7 @@ if(!options.template){
         type: 'list',
         name: 'template',
         message: chalk.blueBright('Select an option to download Device Repository templates: '),
-        choices: ['AllFiles','Index', 'Device', 'Profile', 'Codec'],
+        choices: ['index', 'device', 'profile', 'codec'],
         default: defaultTemplate,
     });
 }
@@ -64,4 +65,5 @@ export async function cli(args){
     let options = parseArgumentsIntoOptions(args);
     options = await promptForMissingOptions(options);
     await createProject(options);
+    await createTemplate(options);
 }
