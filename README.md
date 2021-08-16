@@ -1,38 +1,68 @@
-# Download Device Repository Templates CLI
+# Download and fill Device Repository Templates CLI
 
-Download The Things Network device repository pre-build templates, you only need to fill them.
+This is a Command-line tool to download and fill The Things Network Device Repository templates.
 
 ## Documentation
 
-- Create a folder and install this npm .
-- Inside the folder you have created Run create-project, it will create a folder and download The Things Network Device Repository templates inside of it.
+Follow instructions to install this package:
+
+- Create a folder.
+- Inside of the created folder install this package `npm install devrepo-templates`
+- Inside the folder you will have all this  folders and files, follow the comments: 
 
 ```bash
 folder
-├── src
-│   ├── index.yaml              # vendor index
-│   ├── device.yaml             # device definition
-│   ├── profile.yaml            # generic end device profile
-│   ├── codec-x                 # payload codec definition
+│ package.json                  #delete this file
+│ package-lock.json             #delete this file
+├── node_modules
+│   ├── ...
+│   ├── devrepo-templates
+│   │   ├── bin                 #move this folder to main folder
+│   │   ├── src                 #move this folder to main folder
+│   │   ├── templates           #move this folder to main folder
+│   │   ├── package.json        #move this file to main folder
+│   │   ├── package-lock.json.  #move this file to main folder
+│   ├── ...
 ```
-- Files need to be fill following instructions:
+- Your main folder must end with the next structure:
 
-https://user-images.githubusercontent.com/81958808/128865600-f3d5067c-f48a-4f68-8ad0-988d29a0d9b5.mov
+```bash
+folder
+├── bin                 
+├── src                 
+├── templates           
+│ package.json        
+│ package-lock.json.  
+├── node_modules
+```
+- Once you have this structure run 'create-project' and you can start downloading and filling device repository templates
 
-- If you download codec file it will be neccesary to add the decoder .js file.
-- Device Repository information can be review in this link https://github.com/TheThingsNetwork/lorawan-devices
+<img width="580" alt="Screen Shot 2021-08-15 at 19 55 46" src="https://user-images.githubusercontent.com/81958808/129498295-3f353500-4599-4747-9f63-17b43fd81d87.png">
+
+- When you finish with any template CLI will create a folder named device, inside of it will be your file.
+
+```bash
+folder
+├── ...                 
+├── device
+│   ├── index.yaml
+├── ...           
+```
 
 ## Example
 
-Create a new folder named dev1.
-Inside this folder run:
+Create a new folder named test6
+Run 'create-project' and fill device template
 
-```bash
-create-project
-```
+<img width="511" alt="Screen Shot 2021-08-15 at 20 02 26" src="https://user-images.githubusercontent.com/81958808/129498568-6239d2e4-e5b4-4c7c-9188-09b7849946ce.png">
 
-Depending on your selection template files will be downloaded in your folder
+Download template and fill the infomation: file name, name of the device, description, etc. 
+Fill the Output path as the CLI ask.
 
-https://user-images.githubusercontent.com/81958808/128866623-69936451-bb52-467b-90b2-7a9bd9f7608d.mov
+<img width="573" alt="Screen Shot 2021-08-15 at 20 04 56" src="https://user-images.githubusercontent.com/81958808/129498670-e91395fe-c4cc-4a3c-9284-100812e043be.png">
 
-Now you only have to fill all the parameters of each files.
+Device file will be created in device folder with the information you fill.
+
+<img width="947" alt="Screen Shot 2021-08-15 at 20 09 17" src="https://user-images.githubusercontent.com/81958808/129498815-e12cabce-6b88-46c6-a38b-9534cf734361.png">
+
+Now you can use this file in device repository for adding new devices.
