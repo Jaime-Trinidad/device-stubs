@@ -1,68 +1,58 @@
-# Download and fill Device Repository Templates CLI
+# Template Generator
 
-This is a Command-line tool to download and fill The Things Network Device Repository templates.
+This is a Command-line tool to generate and fill Device Repository templates.
 
 ## Documentation
 
-Follow instructions to install this package:
+Once you clone lorawan-device repository and create a new branch to add your devices run `make file` in your terminal, this command will launch template generator.
 
-- Create a folder.
-- Inside of the created folder install this package `npm install devrepo-templates`
-- Inside the folder you will have all this  folders and files, follow the comments: 
-
-```bash
-folder
-│ package.json                  #delete this file
-│ package-lock.json             #delete this file
-├── node_modules
-│   ├── ...
-│   ├── devrepo-templates
-│   │   ├── bin                 #move this folder to main folder
-│   │   ├── src                 #move this folder to main folder
-│   │   ├── templates           #move this folder to main folder
-│   │   ├── package.json        #move this file to main folder
-│   │   ├── package-lock.json.  #move this file to main folder
-│   ├── ...
-```
-- Your main folder must end with the next structure:
-
-```bash
-folder
-├── bin                 
-├── src                 
-├── templates           
-│ package.json        
-│ package-lock.json.  
-├── node_modules
-```
-- Once you have this structure run 'create-project' and you can start downloading and filling device repository templates
+Templates are generated individually so select your template and fill the information.
 
 <img width="580" alt="Screen Shot 2021-08-15 at 19 55 46" src="https://user-images.githubusercontent.com/81958808/129498295-3f353500-4599-4747-9f63-17b43fd81d87.png">
 
-- When you finish with any template CLI will create a folder named device, inside of it will be your file.
+To save our file is important to follow `Output path: ./vendor/vendor_name/file_name.yaml`
+- <vendor_name> must be filled with your vendor name.
+- <file_name> must be filled with the file name you write + `.yaml` extension
 
-```bash
-folder
-├── ...                 
-├── device
-│   ├── index.yaml
-├── ...           
-```
+### Example
 
-## Example
+We are going to add a new board to device repository, we create a new branch and run `make file`
 
-Create a new folder named test6
-Run 'create-project' and fill device template
+## Index
 
-<img width="511" alt="Screen Shot 2021-08-15 at 20 02 26" src="https://user-images.githubusercontent.com/81958808/129498568-6239d2e4-e5b4-4c7c-9188-09b7849946ce.png">
+Select index option and enter Fill Index Template, you must fill all information and output path.
 
-Download template and fill the infomation: file name, name of the device, description, etc. 
-Fill the Output path as the CLI ask.
+![Screen Shot 2021-08-18 at 16 20 12](https://user-images.githubusercontent.com/81958808/129973678-36c1d946-c3ed-4f3b-83b0-62e5694f7864.png)
 
-<img width="573" alt="Screen Shot 2021-08-15 at 20 04 56" src="https://user-images.githubusercontent.com/81958808/129498670-e91395fe-c4cc-4a3c-9284-100812e043be.png">
+A new folder has been created inside vendor and contains `index.yaml` file.
 
-Device file will be created in device folder with the information you fill.
+![Screen Shot 2021-08-18 at 16 23 12](https://user-images.githubusercontent.com/81958808/129973919-f6532b37-425d-4c49-8eee-586ee9581f18.png)
 
-<img width="947" alt="Screen Shot 2021-08-15 at 20 09 17" src="https://user-images.githubusercontent.com/81958808/129498815-e12cabce-6b88-46c6-a38b-9534cf734361.png">
+## End Device
 
-Now you can use this file in device repository for adding new devices.
+Select device option, fill all the required information and the output path.
+
+![Screen Shot 2021-08-18 at 16 26 59](https://user-images.githubusercontent.com/81958808/129974347-56de2165-0e42-4d85-82c1-ab283e33881b.png)
+
+## Profile
+
+Select profile option, fill file name (try to use your region as name ex. eu868, us915...) insert all the necessary information and output path.
+
+![Screen Shot 2021-08-18 at 16 31 05](https://user-images.githubusercontent.com/81958808/129974807-00af3ecb-f6aa-4466-8a1c-8a9cfca00f25.png)
+
+## Codec
+
+To fill codec fill is necessary to have the decoder file name.
+Select codec and fill the information.
+
+![Screen Shot 2021-08-18 at 16 33 19](https://user-images.githubusercontent.com/81958808/129975030-5da94b50-7e85-443f-8dc2-87d46511f60b.png)
+
+
+Once you finish to add files you can look at them insider the `vendor_name` folder with basic information, is neccesary to look all the files to review and fill missing information.
+
+![Screen Shot 2021-08-18 at 16 35 53](https://user-images.githubusercontent.com/81958808/129975371-327882c7-1ee9-4d0e-9929-be53928fce04.png)
+
+![Screen Shot 2021-08-18 at 16 37 39](https://user-images.githubusercontent.com/81958808/129975484-7ce4b9e9-9a42-4043-8e2b-330f1b412a1a.png)
+
+
+
